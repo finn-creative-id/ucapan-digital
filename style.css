@@ -1,0 +1,70 @@
+/* =====================
+   Custom Utilities & States
+   ===================== */
+:root {
+    --bg-dark: #0f0c29;
+    --primary: #ff758c;
+    --secondary: #ff7eb3;
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
+
+/* Navbar Scrolled State (triggered by JS) */
+.navbar.scrolled {
+    padding: 1rem 0 !important;
+    background: rgba(15, 12, 41, 0.95) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Mobile Hamburger Active States (triggered by JS) */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: rgba(15, 12, 41, 0.95);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+    .nav-links.active {
+        right: 0;
+    }
+}
+
+/* Drag to Unlock Toggle Success State */
+#intro-toggle-track.success {
+    background-color: #6b4226 !important;
+    border-color: #f7f1e3 !important;
+}

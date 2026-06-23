@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Hari Jadi Sayang</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        cursive: ['Great Vibes', 'cursive']
+                    },
+                    colors: {
+                        brand: { dark: '#0f0c29', main: '#ff758c', secondary: '#ff7eb3' }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[linear-gradient(135deg,#0f0c29,#302b63,#24243e)] text-white font-sans overflow-x-hidden antialiased">
+
+    <!-- Intro Gate -->
+    <div id="intro-screen" class="fixed inset-0 w-screen h-screen bg-[#6b4226] bg-[url('images/vintage_paper.png')] bg-cover bg-center bg-blend-screen z-[9999] flex justify-center items-center text-white transition-opacity duration-700">
+        <div class="flex w-full max-w-6xl p-8 items-center justify-center z-10">
+            <div class="flex flex-col items-center text-center mt-[10vh]">
+                
+                <style>
+                    /* Staggered Entrance Animations */
+                    @keyframes fadeInUp {
+                        0% { opacity: 0; transform: translateY(30px); }
+                        100% { opacity: 1; transform: translateY(0); }
+                    }
+                    /* Flower Swaying */
+                    @keyframes swayL {
+                        0% { transform: translateY(-50%) rotate(0deg); }
+                        100% { transform: translateY(-50%) rotate(-6deg); }
+                    }
+                    @keyframes swayR {
+                        0% { transform: translateY(-50%) scaleX(-1) rotate(0deg); }
+                        100% { transform: translateY(-50%) scaleX(-1) rotate(-6deg); }
+                    }
+                    
+                    /* Organic Growth Animations */
+                    @keyframes growStem {
+                        0% { transform: scaleY(0); opacity: 0; }
+                        100% { transform: scaleY(1); opacity: 1; }
+                    }
+                    @keyframes growLeaf {
+                        0% { transform: scale(0) rotate(-20deg); opacity: 0; }
+                        100% { transform: scale(1) rotate(0deg); opacity: 1; }
+                    }
+                    @keyframes growPetal {
+                        0% { transform: scale(0); opacity: 0; }
+                        100% { transform: scale(1); opacity: 1; }
+                    }
+
+                    .animate-fade-1 { opacity: 0; animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards; }
+                    .animate-fade-2 { opacity: 0; animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.9s forwards; }
+                    .animate-fade-3 { opacity: 0; animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 1.4s forwards; }
+                    .animate-fade-4 { opacity: 0; animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 1.9s forwards; }
+                    .animate-fade-5 { opacity: 0; animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 2.4s forwards; }
+
+                    .flower-l { animation: swayL 3.5s ease-in-out 3.5s infinite alternate; transform: translateY(-50%); transform-origin: bottom center; }
+                    .flower-r { animation: swayR 3.5s ease-in-out 3.5s infinite alternate; transform: translateY(-50%) scaleX(-1); transform-origin: bottom center; }
+
+                    .flower-stem { transform-origin: bottom center; animation: growStem 0.8s ease-out forwards; opacity: 0; }
+                    .flower-leaf { animation: growLeaf 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; opacity: 0; }
+                    .flower-petal { animation: growPetal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; opacity: 0; }
+                </style>
+
+                <div class="flex flex-col items-center mb-5">
+                    <div class="font-serif text-[1.6rem] tracking-[12px] uppercase font-semibold mb-[25px] z-10 animate-fade-1">Selamat</div>
+                    <div class="font-cursive text-[6.5rem] font-normal leading-none whitespace-nowrap relative animate-fade-2">
+                        
+                        <!-- SVG Vintage Lotus Flower (Left) -->
+                        <div class="absolute top-1/2 right-full mr-5 w-24 pointer-events-none mix-blend-screen z-0 flower-l">
+                            <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
+                                <!-- Stem -->
+                                <path class="flower-stem" d="M50 140 Q 55 100 50 60" stroke="#fdfbf7" stroke-width="3" fill="none" stroke-linecap="round" style="transform-origin: 50px 140px; animation-delay: 1.2s;" />
+                                <!-- Leaves -->
+                                <path class="flower-leaf" d="M51 110 Q 25 105 20 85 Q 40 85 51 110" stroke="#fdfbf7" stroke-width="2" fill="none" stroke-linecap="round" style="transform-origin: 51px 110px; animation-delay: 1.6s;" />
+                                <path class="flower-leaf" d="M49 95 Q 75 90 80 70 Q 60 70 49 95" stroke="#fdfbf7" stroke-width="2" fill="none" stroke-linecap="round" style="transform-origin: 49px 95px; animation-delay: 1.8s;" />
+                                <!-- Petals -->
+                                <path class="flower-petal" d="M50 60 C 35 45, 35 25, 50 20 C 65 25, 65 45, 50 60" stroke="#fdfbf7" stroke-width="2.5" fill="none" stroke-linecap="round" style="transform-origin: 50px 60px; animation-delay: 2.1s;" />
+                                <path class="flower-petal" d="M50 60 C 25 50, 15 30, 30 20 C 40 25, 45 40, 50 60" stroke="#fdfbf7" stroke-width="2" fill="none" stroke-linecap="round" style="transform-origin: 50px 60px; animation-delay: 2.3s;" />
+                                <path class="flower-petal" d="M50 60 C 75 50, 85 30, 70 20 C 60 25, 55 40, 50 60" stroke="#fdfbf7" stroke-width="2" fill="none" stroke-linecap="round" style="transform-origin: 50px 60px; animation-delay: 2.5s;" />
+                            </svg>
+                        </div>
+                        
+                        Hari Jadi Sayangku
+                        
+                        <!-- SVG Vintage Lotus Flower (Right) -->
+                        <div class="absolute top-1/2 left-full ml-5 w-24 pointer-events-none mix-blend-screen z-0 flower-r">
+                            <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
+                                <!-- Stem -->
+                                <path class="flower-stem" d="M50 140 Q 55 100 50 60" stroke="#fdfbf7" stroke-width="3" fill="none" stroke-linecap="round" style="transform-origin: 50px 140px; animation-delay: 1.2s;" />
+                                <!-- Leaves -->
+                                <path class="flower-leaf" d="M51 110 Q 25 105 20 85 Q 40 85 51 110" stroke="#fdfbf7" stroke-width="2" fill="none" stroke-linecap="round" style="transform-origin: 51px 110px; animation-delay: 1.6s;" />
+                                <path class="flower-leaf" d="M49 95 Q 75 90 80 70 Q 60 70 49 95" stroke="#fdfbf7" stroke-width="2" fill="none" stroke-linecap="round" style="transform-origin: 49px 95px; animation-delay: 1.8s;" />
+                                <!-- Petals -->
+                                <path class="flower-petal" d="M50 60 C 35 45, 35 25, 50 20 C 65 25, 65 45, 50 60" stroke="#fdfbf7" stroke-width="2.5" fill="none" stroke-linecap="round" style="transform-origin: 50px 60px; animation-delay: 2.1s;" />
+                                <path class="flower-petal" d="M50 60 C 25 50, 15 30, 30 20 C 40 25, 45 40, 50 60" stroke="#fdfbf7" stroke-width="2" fill="none" stroke-linecap="round" style="transform-origin: 50px 60px; animation-delay: 2.3s;" />
+                                <path class="flower-petal" d="M50 60 C 75 50, 85 30, 70 20 C 60 25, 55 40, 50 60" stroke="#fdfbf7" stroke-width="2" fill="none" stroke-linecap="round" style="transform-origin: 50px 60px; animation-delay: 2.5s;" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="my-5 animate-fade-3">
+                    <svg width="200" height="30" viewBox="0 0 200 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 15 Q 50 -10, 100 15 T 200 15" stroke="#ffffff" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                
+                <p class="font-serif text-[1.4rem] my-7 italic font-normal tracking-wide animate-fade-4">Apakah kamu sudah siap melihat apa yang aku siapkan untukmu?!</p>
+                
+                <div class="flex justify-center mt-5 animate-fade-5">
+                    <div class="w-[200px] h-[46px] bg-black/40 rounded-full border-2 border-white/20 relative cursor-grab flex items-center justify-center overflow-hidden shadow-[inset_0_4px_10px_rgba(0,0,0,0.5)] transition-colors duration-400 ease-in-out" id="intro-toggle-track">
+                        <div class="w-[38px] h-[38px] bg-[#f7f1e3] rounded-full absolute left-[2px] flex justify-center items-center z-10 shadow-[0_4px_8px_rgba(0,0,0,0.4)] transition-transform duration-100" id="intro-toggle-thumb">
+                            <span class="text-[#6b4226] text-[1.2rem] font-bold pointer-events-none">&rarr;</span>
+                        </div>
+                        <span class="font-sans text-[0.9rem] tracking-[2px] text-white/60 pointer-events-none z-0 transition-opacity duration-300 track-text">GESER</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full py-6 bg-[#0f0c29]/70 backdrop-blur-md z-[1000] transition-all duration-300 navbar">
+        <div class="max-w-[1200px] mx-auto flex justify-between items-center px-8">
+            <a href="#" class="font-cursive text-3xl text-white no-underline font-bold logo">Selamanya <span class="text-[#ff758c]">&</span> Selalu</a>
+            <ul class="hidden md:flex list-none gap-8 nav-links">
+                <li><a href="#home" class="text-white text-[1.1rem] font-normal relative hover:text-[#ff758c] transition-colors after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-[2px] after:bg-[#ff758c] after:transition-all hover:after:w-full">Beranda</a></li>
+                <li><a href="#story" class="text-white text-[1.1rem] font-normal relative hover:text-[#ff758c] transition-colors after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-[2px] after:bg-[#ff758c] after:transition-all hover:after:w-full">Kisah Kita</a></li>
+                <li><a href="#gallery" class="text-white text-[1.1rem] font-normal relative hover:text-[#ff758c] transition-colors after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-[2px] after:bg-[#ff758c] after:transition-all hover:after:w-full">Kenangan</a></li>
+                <li><a href="#message" class="text-white text-[1.1rem] font-normal relative hover:text-[#ff758c] transition-colors after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-[2px] after:bg-[#ff758c] after:transition-all hover:after:w-full">Pesan</a></li>
+            </ul>
+            <div class="md:hidden cursor-pointer hamburger">
+                <span class="block w-[25px] h-[3px] my-[5px] bg-white transition-all bar"></span>
+                <span class="block w-[25px] h-[3px] my-[5px] bg-white transition-all bar"></span>
+                <span class="block w-[25px] h-[3px] my-[5px] bg-white transition-all bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="h-screen flex items-center justify-center text-center px-8 relative">
+        <div class="max-w-3xl z-10">
+            <h1 class="font-serif text-5xl md:text-7xl font-extrabold mb-6">Selamat Hari Jadi, <br> <span class="bg-gradient-to-r from-[#ff758c] to-[#ff7eb3] text-transparent bg-clip-text">Duniaku</span></h1>
+            <p class="text-xl md:text-2xl text-[#b3b3b3] font-light mb-10 leading-relaxed">Setiap kisah cinta itu indah, tapi kisah kitalah yang jadi favoritku.</p>
+            <div class="text-6xl mb-10 animate-bounce">❤️</div>
+            <a href="#story" class="inline-block bg-gradient-to-r from-[#ff758c] to-[#ff7eb3] text-white py-4 px-10 rounded-full text-lg font-bold transition-transform hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,117,140,0.4)]">Perjalanan Kita</a>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="py-24 px-8 max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 relative">Bagaimana Semua <span class="bg-gradient-to-r from-[#ff758c] to-[#ff7eb3] text-transparent bg-clip-text">Bermula</span></h2>
+        <div class="flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1 text-left">
+                <h3 class="font-serif text-3xl font-semibold mb-6">Pertama Kali Kita Bertemu</h3>
+                <p class="text-[#b3b3b3] text-lg leading-relaxed mb-6">Sejak pertama kali mata kita saling bertatap, aku tahu ada sesuatu yang ajaib. Setiap tawa, setiap senyuman, dan setiap momen kecil yang kita lewati adalah harta karun yang kusimpan dalam hatiku. Kamu bukan sekadar pasangan bagiku, kamu adalah rumahku.</p>
+                <p class="text-[#b3b3b3] text-lg leading-relaxed">Terima kasih sudah menjadi alasanku tersenyum di setiap hariku.</p>
+            </div>
+            <div class="flex-1 relative w-full flex justify-center">
+                <img src="images/couple.png" alt="Siluet Pasangan" class="w-full max-w-md rounded-2xl relative z-10 shadow-[0_20px_40px_rgba(0,0,0,0.5)] bg-white/5 backdrop-blur-md">
+                <div class="absolute inset-0 bg-[#ff758c] blur-[60px] opacity-20 -z-10 rounded-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 px-8 max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 relative">Kenangan <span class="bg-gradient-to-r from-[#ff758c] to-[#ff7eb3] text-transparent bg-clip-text">Indah Kita</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="relative rounded-2xl overflow-hidden group aspect-square shadow-[0_15px_30px_rgba(0,0,0,0.4)]">
+                <img src="images/bouquet.png" alt="Buket Bunga" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0f0c29] via-[#0f0c29]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
+                    <span class="font-serif text-2xl font-bold translate-y-5 group-hover:translate-y-0 transition-transform duration-300 text-white">Kencan Pertama</span>
+                </div>
+            </div>
+            <!-- More items can be added here by the user -->
+            <div class="relative rounded-2xl overflow-hidden group aspect-square bg-white/5 border-2 border-dashed border-white/20 flex items-center justify-center cursor-pointer transition-colors hover:bg-white/10 hover:border-white/40 shadow-[0_15px_30px_rgba(0,0,0,0.4)]">
+                <div class="text-center text-white/50 group-hover:text-white/80 transition-colors">
+                    <span class="block text-4xl mb-2 font-light">+</span>
+                    <span class="text-lg font-medium">Tambah Foto</span>
+                </div>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden group aspect-square bg-white/5 border-2 border-dashed border-white/20 flex items-center justify-center cursor-pointer transition-colors hover:bg-white/10 hover:border-white/40 shadow-[0_15px_30px_rgba(0,0,0,0.4)]">
+                <div class="text-center text-white/50 group-hover:text-white/80 transition-colors">
+                    <span class="block text-4xl mb-2 font-light">+</span>
+                    <span class="text-lg font-medium">Tambah Foto</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Section -->
+    <section id="message" class="py-24 px-8 max-w-6xl mx-auto">
+        <div class="max-w-4xl mx-auto bg-white/5 backdrop-blur-lg border border-white/10 p-10 md:p-16 rounded-[2rem] text-center shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+            <h2 class="font-cursive text-5xl md:text-6xl text-[#ff758c] mb-8 drop-shadow-md">Surat Untukmu</h2>
+            <p class="text-xl md:text-2xl italic leading-relaxed text-[#e6e6e6] mb-10">
+                "Aku mencintaimu tanpa tahu bagaimana, kapan, atau dari mana asalnya. Aku mencintaimu dengan sederhana: Aku mencintaimu seperti ini karena aku tak tahu cara lain untuk mencintai selain dengan cara ini."
+            </p>
+            <p class="font-bold text-xl text-white">- Milikmu selamanya ❤️</p>
+        </div>
+    </section>
+
+    <footer class="text-center py-8 border-t border-white/10 text-[#b3b3b3] mt-10">
+        <p>Dibuat dengan 💖 khusus untukmu</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
