@@ -125,3 +125,98 @@ if (introScreen && track && thumb) {
     document.addEventListener('mouseup', endDrag);
     document.addEventListener('touchend', endDrag);
 }
+
+// Typewriter Effect Logic
+const heroTitle = document.getElementById('hero-title');
+const heroDesc = document.getElementById('hero-desc');
+const heroHeart = document.getElementById('hero-heart');
+const heroBtn = document.getElementById('hero-btn');
+
+if (heroTitle && heroDesc) {
+    const wrapChars = (el) => {
+        const childNodes = Array.from(el.childNodes);
+        childNodes.forEach(node => {
+            if (node.nodeType === Node.TEXT_NODE) {
+                const text = node.textContent;
+                const fragment = document.createDocumentFragment();
+                for (let i = 0; i < text.length; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = text[i];
+                    span.style.display = 'none';
+                    fragment.appendChild(span);
+                }
+                el.replaceChild(fragment, node);
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+                wrapChars(node);
+            }
+        });
+    };
+
+    wrapChars(heroTitle);
+    wrapChars(heroDesc);
+
+    const titleChars = Array.from(heroTitle.querySelectorAll('span[style*="display: none"]'));
+    const descChars = Array.from(heroDesc.querySelectorAll('span[style*="display: none"]'));
+
+    let typeSpeed = 60;
+    let eraseSpeed = 35;
+
+    const typeArray = (chars, callback) => {
+        let i = 0;
+        const interval = setInterval(() => {
+            if (i < chars.length) {
+                chars[i].style.display = 'inline';
+                i++;
+            } else {
+                clearInterval(interval);
+                if (callback) callback();
+            }
+        }, typeSpeed);
+    };
+
+    const eraseArray = (chars, stopIndex, callback) => {
+        let i = chars.length - 1;
+        const interval = setInterval(() => {
+            if (i >= stopIndex) {
+                chars[i].style.display = 'none';
+                i--;
+            } else {
+                clearInterval(interval);
+                if (callback) callback();
+            }
+        }, eraseSpeed);
+    };
+
+    // Animation Sequence
+    setTimeout(() => {
+        typeArray(titleChars, () => {
+            typeArray(descChars, () => {
+                // Show heart and button
+                if(heroHeart) heroHeart.style.opacity = '1';
+                if(heroBtn) {
+                    heroBtn.style.opacity = '1';
+                    heroBtn.style.transform = 'translateY(0)';
+                    heroBtn.style.pointerEvents = 'auto';
+                }
+
+                // Wait before erasing
+                setTimeout(() => {
+                    if(heroHeart) heroHeart.style.opacity = '0';
+                    if(heroBtn) {
+                        heroBtn.style.opacity = '0';
+                        heroBtn.style.pointerEvents = 'none';
+                    }
+                    
+                    setTimeout(() => {
+                        eraseArray(descChars, 0, () => {
+                            // "Selamat" is 7 chars. Stop at index 7 to keep indices 0-6 visible.
+                            eraseArray(titleChars, 7, () => {
+                                // Done! Only "Selamat" remains
+                            });
+                        });
+                    }, 500); // Wait for fade out
+                }, 5000); // 5 seconds of reading time
+            });
+        });
+    }, 800); // Initial delay before typing starts
+}
