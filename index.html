@@ -137,10 +137,48 @@
         </div>
     </section>
 
+    <!-- Reply Box Section -->
+    <section id="reply" class="py-16 px-8 max-w-4xl mx-auto section">
+        <div class="bg-[#3e2a1e] p-8 md:p-12 rounded-[2rem] text-center shadow-[0_20px_50px_rgba(62,42,30,0.3)] relative overflow-hidden">
+            <!-- Decorative background -->
+            <div class="absolute inset-0 bg-[url('images/vintage_paper.png')] opacity-10 mix-blend-overlay"></div>
+            
+            <h2 class="font-latin text-4xl md:text-5xl text-[#ebe2d2] mb-4 relative z-10">Balasan Untukku</h2>
+            <p class="text-[#ebe2d2]/80 text-lg mb-8 relative z-10 font-light">Tuliskan sesuatu untukku setelah melihat semua ini...</p>
+            
+            <div class="relative z-10 flex flex-col items-center">
+                <textarea id="waMessage" rows="4" placeholder="Ketik pesan manismu di sini..." class="w-full bg-white/10 border border-[#ebe2d2]/30 text-[#ebe2d2] placeholder-[#ebe2d2]/50 p-5 rounded-2xl outline-none focus:border-[#ff758c] focus:bg-white/20 transition-all resize-none text-lg backdrop-blur-sm"></textarea>
+                
+                <button onclick="sendToWhatsApp()" class="mt-6 flex items-center gap-3 bg-gradient-to-r from-[#ff758c] to-[#ff7eb3] text-white py-4 px-10 rounded-full text-lg font-bold transition-all hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,117,140,0.4)]">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                    Kirim Pesan via WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
     <footer class="text-center py-8 border-t border-black/10 text-[#3e2a1e]/70 mt-10">
         <p>Ini bisa di ganti sesuai request ya dari foto, tema warna dan lainnya ini hanya untuk contoh saja.</p>
     </footer>
 
+    <!-- WhatsApp Integration Script -->
+    <script>
+        function sendToWhatsApp() {
+            // GANTI NOMOR DI BAWAH INI DENGAN NOMOR WA KAMU (Gunakan awalan 62)
+            const phoneNumber = "6281234567890"; 
+            
+            const msgBox = document.getElementById('waMessage');
+            let message = msgBox.value.trim();
+            
+            // Pesan default jika kotak teks kosong
+            if(!message) {
+                message = "Halo sayang! Aku udah liat web kejutannya, bagus bangettt makasih banyak yaaa ❤️";
+            }
+            
+            const encodedMessage = encodeURIComponent(message);
+            const waUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(waUrl, '_blank');
+        }
     <!-- JavaScript -->
     <script src="script.js?v=3"></script>
 </body>
