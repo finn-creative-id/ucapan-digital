@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Hari Jadi Sayang - Welcome</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;600;800&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        cursive: ['Great Vibes', 'cursive'],
+                        latin: ['Dancing Script', 'cursive']
+                    },
+                    colors: {
+                        brand: { dark: '#0f0c29', main: '#ff758c', secondary: '#ff7eb3' }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#ebe2d2] font-sans overflow-hidden antialiased">
+
+    <!-- Intro Gate -->
+    <div id="intro-screen" class="fixed inset-0 w-screen h-screen bg-[linear-gradient(rgba(235,226,210,0.75),rgba(235,226,210,0.75)),url('images/vintage_paper.png')] bg-cover bg-center flex justify-center items-center transition-opacity duration-700">
+        <div class="flex w-full max-w-6xl p-8 items-center justify-center z-10">
+            <div class="flex flex-col items-center text-center mt-[10vh]">
+                
+                <style>
+                    /* Staggered Entrance Animations */
+                    @keyframes fadeInUp {
+                        0% { opacity: 0; transform: translateY(30px); }
+                        100% { opacity: 1; transform: translateY(0); }
+                    }
+                    /* Flower Swaying */
+                    @keyframes swayL {
+                        0% { transform: translateY(-50%) rotate(0deg); }
+                        100% { transform: translateY(-50%) rotate(-6deg); }
+                    }
+                    @keyframes swayR {
+                        0% { transform: translateY(-50%) scaleX(-1) rotate(0deg); }
+                        100% { transform: translateY(-50%) scaleX(-1) rotate(-6deg); }
+                    }
+                    
+                    /* Organic Growth Animations */
+                    @keyframes growStem {
+                        0% { transform: scaleY(0); opacity: 0; }
+                        100% { transform: scaleY(1); opacity: 1; }
+                    }
+                    @keyframes growLeaf {
+                        0% { transform: scale(0) rotate(-20deg); opacity: 0; }
+                        100% { transform: scale(1) rotate(0deg); opacity: 1; }
+                    }
+                    @keyframes growPetal {
+                        0% { transform: scale(0); opacity: 0; }
+                        100% { transform: scale(1); opacity: 1; }
+                    }
+
+                    .animate-fade-1 { opacity: 0; animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards; }
+                    .animate-fade-2 { opacity: 0; animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.9s forwards; }
+                    .animate-fade-3 { opacity: 0; animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 1.4s forwards; }
+                    .animate-fade-4 { opacity: 0; animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 1.9s forwards; }
+                    .animate-fade-5 { opacity: 0; animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 2.4s forwards; }
+
+                    .flower-l { animation: swayL 3.5s ease-in-out 3.5s infinite alternate; transform: translateY(-50%); transform-origin: bottom center; }
+                    .flower-r { animation: swayR 3.5s ease-in-out 3.5s infinite alternate; transform: translateY(-50%) scaleX(-1); transform-origin: bottom center; }
+
+                    .flower-stem { transform-origin: bottom center; animation: growStem 0.8s ease-out forwards; opacity: 0; }
+                    .flower-leaf { animation: growLeaf 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; opacity: 0; }
+                    .flower-petal { animation: growPetal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; opacity: 0; }
+                </style>
+
+                <div class="flex flex-col items-center mb-5 scale-100 origin-center transition-transform">
+                    <div class="font-serif text-[1.2rem] md:text-[1.6rem] tracking-[8px] md:tracking-[12px] uppercase font-bold text-[#3e2a1e] mb-[20px] md:mb-[25px] z-10 animate-fade-1 text-center">Selamat</div>
+                    <div class="font-cursive text-[4.5rem] md:text-[6.5rem] font-normal leading-[1.1] md:leading-none relative animate-fade-2 text-center mt-2 md:mt-0 text-[#5c1a24] drop-shadow-sm">
+                        
+                        <!-- SVG Vintage Lotus Flower (Left) -->
+                        <div class="absolute top-1/2 right-full mr-2 md:mr-5 w-14 md:w-24 pointer-events-none mix-blend-multiply z-0 flower-l">
+                            <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
+                                <!-- Stem -->
+                                <path class="flower-stem" d="M50 140 Q 55 100 50 60" stroke="#4a5d23" stroke-width="3" fill="none" stroke-linecap="round" style="transform-origin: 50px 140px; animation-delay: 1.2s;" />
+                                <!-- Leaves -->
+                                <path class="flower-leaf" d="M51 110 Q 25 105 20 85 Q 40 85 51 110" stroke="#4a5d23" stroke-width="2.5" fill="none" stroke-linecap="round" style="transform-origin: 51px 110px; animation-delay: 1.6s;" />
+                                <path class="flower-leaf" d="M49 95 Q 75 90 80 70 Q 60 70 49 95" stroke="#4a5d23" stroke-width="2.5" fill="none" stroke-linecap="round" style="transform-origin: 49px 95px; animation-delay: 1.8s;" />
+                                <!-- Petals -->
+                                <path class="flower-petal" d="M50 60 C 35 45, 35 25, 50 20 C 65 25, 65 45, 50 60" stroke="#8a2531" stroke-width="3" fill="none" stroke-linecap="round" style="transform-origin: 50px 60px; animation-delay: 2.1s;" />
+                                <path class="flower-petal" d="M50 60 C 25 50, 15 30, 30 20 C 40 25, 45 40, 50 60" stroke="#a13d4b" stroke-width="2.5" fill="none" stroke-linecap="round" style="transform-origin: 50px 60px; animation-delay: 2.3s;" />
+                                <path class="flower-petal" d="M50 60 C 75 50, 85 30, 70 20 C 60 25, 55 40, 50 60" stroke="#a13d4b" stroke-width="2.5" fill="none" stroke-linecap="round" style="transform-origin: 50px 60px; animation-delay: 2.5s;" />
+                            </svg>
+                        </div>
+                        
+                        <span class="block md:inline">Hari Jadi</span><span class="hidden md:inline"> </span><span class="block md:inline">Saya<span class="bg-gradient-to-r from-[#5c1a24] to-white text-transparent bg-clip-text">ngku</span></span>
+                        
+                        <!-- SVG Vintage Lotus Flower (Right) -->
+                        <div class="absolute top-1/2 left-full ml-2 md:ml-5 w-14 md:w-24 pointer-events-none mix-blend-multiply z-0 flower-r">
+                            <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
+                                <!-- Stem -->
+                                <path class="flower-stem" d="M50 140 Q 55 100 50 60" stroke="#4a5d23" stroke-width="3" fill="none" stroke-linecap="round" style="transform-origin: 50px 140px; animation-delay: 1.2s;" />
+                                <!-- Leaves -->
+                                <path class="flower-leaf" d="M51 110 Q 25 105 20 85 Q 40 85 51 110" stroke="#4a5d23" stroke-width="2.5" fill="none" stroke-linecap="round" style="transform-origin: 51px 110px; animation-delay: 1.6s;" />
+                                <path class="flower-leaf" d="M49 95 Q 75 90 80 70 Q 60 70 49 95" stroke="#4a5d23" stroke-width="2.5" fill="none" stroke-linecap="round" style="transform-origin: 49px 95px; animation-delay: 1.8s;" />
+                                <!-- Petals -->
+                                <path class="flower-petal" d="M50 60 C 35 45, 35 25, 50 20 C 65 25, 65 45, 50 60" stroke="#8a2531" stroke-width="3" fill="none" stroke-linecap="round" style="transform-origin: 50px 60px; animation-delay: 2.1s;" />
+                                <path class="flower-petal" d="M50 60 C 25 50, 15 30, 30 20 C 40 25, 45 40, 50 60" stroke="#a13d4b" stroke-width="2.5" fill="none" stroke-linecap="round" style="transform-origin: 50px 60px; animation-delay: 2.3s;" />
+                                <path class="flower-petal" d="M50 60 C 75 50, 85 30, 70 20 C 60 25, 55 40, 50 60" stroke="#a13d4b" stroke-width="2.5" fill="none" stroke-linecap="round" style="transform-origin: 50px 60px; animation-delay: 2.5s;" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="my-5 animate-fade-3">
+                    <svg width="200" height="30" viewBox="0 0 200 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 15 Q 50 -10, 100 15 T 200 15" stroke="#3e2a1e" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                    </svg>
+                </div>
+                
+                <p class="font-serif text-[1rem] md:text-[1.4rem] my-7 italic font-semibold tracking-wide text-[#3e2a1e] animate-fade-4 px-4 text-center max-w-[90vw] leading-relaxed">Apakah kamu sudah siap melihat apa yang aku siapkan untukmu?!</p>
+                
+                <div class="flex justify-center mt-5 animate-fade-5">
+                    <div class="w-[180px] md:w-[200px] h-[46px] bg-black/5 rounded-full border border-black/20 relative cursor-grab flex items-center justify-center overflow-hidden shadow-[inset_0_4px_10px_rgba(0,0,0,0.05)] transition-colors duration-400 ease-in-out" id="intro-toggle-track">
+                        <div class="w-[38px] h-[38px] bg-[#3e2a1e] rounded-full absolute left-[2px] flex justify-center items-center z-10 shadow-[0_4px_8px_rgba(0,0,0,0.2)] transition-transform duration-100" id="intro-toggle-thumb">
+                            <span class="text-[#f7f1e3] text-[1.2rem] font-bold pointer-events-none">&rarr;</span>
+                        </div>
+                        <span class="font-sans text-[0.9rem] font-semibold tracking-[3px] text-[#3e2a1e]/60 pointer-events-none z-0 transition-opacity duration-300 track-text">GESER</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

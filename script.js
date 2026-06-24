@@ -1,28 +1,32 @@
 // Navbar Scroll Effect
 const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
 
 // Mobile Menu Toggle
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-});
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
 
-// Close mobile menu when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navLinks.classList.remove('active');
-}));
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+    }));
+}
 
 // Smooth reveal elements on scroll
 const revealElements = document.querySelectorAll('.section');
@@ -93,8 +97,10 @@ if (introScreen && track && thumb) {
             thumb.style.transform = `translateX(${maxDrag}px)`;
             track.classList.add('success');
             setTimeout(() => {
-                introScreen.classList.add('hidden');
-                document.body.style.overflow = 'auto';
+                introScreen.style.opacity = '0';
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 500); // Wait for fade out
             }, 400);
         } else {
             thumb.style.transition = 'transform 0.3s ease';
