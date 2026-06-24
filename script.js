@@ -142,6 +142,7 @@ if (heroTitle && heroDesc) {
                 for (let i = 0; i < text.length; i++) {
                     const span = document.createElement('span');
                     span.textContent = text[i];
+                    span.className = 'type-char';
                     span.style.display = 'none';
                     fragment.appendChild(span);
                 }
@@ -155,8 +156,8 @@ if (heroTitle && heroDesc) {
     wrapChars(heroTitle);
     wrapChars(heroDesc);
 
-    const titleChars = Array.from(heroTitle.querySelectorAll('span[style*="display: none"]'));
-    const descChars = Array.from(heroDesc.querySelectorAll('span[style*="display: none"]'));
+    const titleChars = Array.from(heroTitle.querySelectorAll('.type-char'));
+    const descChars = Array.from(heroDesc.querySelectorAll('.type-char'));
 
     let typeSpeed = 60;
     let eraseSpeed = 35;
