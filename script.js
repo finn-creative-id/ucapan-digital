@@ -96,6 +96,10 @@ if (introScreen && track && thumb) {
         if (moveX >= maxDrag * 0.8) {
             thumb.style.transform = `translateX(${maxDrag}px)`;
             track.classList.add('success');
+            
+            // Tandai bahwa user sudah melewati layar welcome
+            sessionStorage.setItem('welcomed', 'true');
+            
             setTimeout(() => {
                 introScreen.style.opacity = '0';
                 setTimeout(() => {
