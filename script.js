@@ -103,7 +103,7 @@ if (introScreen && track && thumb) {
             setTimeout(() => {
                 introScreen.style.opacity = '0';
                 setTimeout(() => {
-                    window.location.href = 'index.html';
+                    window.location.href = 'index.html?welcomed=true';
                 }, 500); // Wait for fade out
             }, 400);
         } else {

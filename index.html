@@ -6,8 +6,12 @@
     <title>Selamat Hari Jadi Sayang</title>
     <!-- Redirect to welcome screen if not visited yet -->
     <script>
-        if (!sessionStorage.getItem('welcomed')) {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (!urlParams.get('welcomed') && !sessionStorage.getItem('welcomed')) {
             window.location.href = 'welcome.html';
+        } else if (urlParams.get('welcomed')) {
+            try { sessionStorage.setItem('welcomed', 'true'); } catch(e) {}
+            window.history.replaceState({}, document.title, window.location.pathname);
         }
     </script>
     <!-- Fonts -->
