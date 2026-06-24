@@ -199,24 +199,6 @@ if (heroTitle && heroDesc) {
                     heroBtn.style.transform = 'translateY(0)';
                     heroBtn.style.pointerEvents = 'auto';
                 }
-
-                // Wait before erasing
-                setTimeout(() => {
-                    if(heroHeart) heroHeart.style.opacity = '0';
-                    if(heroBtn) {
-                        heroBtn.style.opacity = '0';
-                        heroBtn.style.pointerEvents = 'none';
-                    }
-                    
-                    setTimeout(() => {
-                        eraseArray(descChars, 0, () => {
-                            // "Selamat" is 7 chars. Stop at index 7 to keep indices 0-6 visible.
-                            eraseArray(titleChars, 7, () => {
-                                // Done! Only "Selamat" remains
-                            });
-                        });
-                    }, 500); // Wait for fade out
-                }, 5000); // 5 seconds of reading time
             });
         });
     }, 800); // Initial delay before typing starts
